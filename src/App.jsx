@@ -1,13 +1,13 @@
 import { useState } from 'react';
 import './App.css';
-import HookCounterFour from './components/HookCounterFour';
+import HookCounterOne from './components/HookCounterOne';
 
 function App() {
   const [count, setCount] = useState(0);
 
   return (
     <>
-      <HookCounterFour />
+      <HookCounterOne />
     </>
   );
 }
