@@ -1,13 +1,13 @@
 import { useState } from 'react';
 import './App.css';
-import MouseContainer from './components/MouseContainer';
+import IntervalHookCounter from './components/IntervalHookCounter';
 
 function App() {
   const [count, setCount] = useState(0);
 
   return (
     <>
-      <MouseContainer />
+      <IntervalHookCounter />
     </>
   );
 }
