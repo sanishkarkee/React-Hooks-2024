@@ -1,13 +1,13 @@
 import { useState } from 'react';
 import './App.css';
-import HookMouse from './components/HookMouse';
+import MouseContainer from './components/MouseContainer';
 
 function App() {
   const [count, setCount] = useState(0);
 
   return (
     <>
-      <HookMouse />
+      <MouseContainer />
     </>
   );
 }
