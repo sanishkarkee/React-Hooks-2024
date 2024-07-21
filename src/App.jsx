@@ -1,13 +1,13 @@
 import { useState } from 'react';
 import './App.css';
-import IntervalHookCounter from './components/IntervalHookCounter';
+import DataFetching from './components/DataFetching';
 
 function App() {
   const [count, setCount] = useState(0);
 
   return (
     <>
-      <IntervalHookCounter />
+      <DataFetching />
     </>
   );
 }
