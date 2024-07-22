@@ -7,12 +7,17 @@ function DataFetching() {
   // const [posts, setPosts] = useState([]); //[] leko because APi bata aaune data arrays of objects ma xa
   const [post, setPost] = useState({}); //mathi array thyo yaha  { } xa because yaha id through bat single object GET garinxa so
   const [id, setId] = useState(1);
+  const [idFromButtonClick, setIdFromButtonClick] = useState(1);
 
   // console.log(post);
 
+  const handleClick = () => {
+    setIdFromButtonClick(id);
+  };
+
   useEffect(() => {
     axios
-      .get(`https://jsonplaceholder.typicode.com/posts/${id}`)
+      .get(`https://jsonplaceholder.typicode.com/posts/${idFromButtonClick}`)
       .then((res) => {
         console.log(res); // yo res ma chai sab (name:value) properties haru aauxa
         setPost(res.data); //tyo mathi aayeko (name:value) properties ma chai "data" bhanne properties ma actual khojeko data haru hunxa example : "userId": 1 - "id": 1 - "title": "sunt aut facere" - "body": "quia et suscipit nsuscipit recusandae"
@@ -21,12 +26,18 @@ function DataFetching() {
       .catch((err) => {
         console.log(err);
       });
-  }, [id]);
+  }, [idFromButtonClick]);
 
   return (
     <>
       <input type='text' value={id} onChange={(e) => setId(e.target.value)} />
-      <p>{post.title}</p>
+
+      <button type='button' onClick={handleClick}>
+        Fetch Post
+      </button>
+
+      <p>Title: {post.title}</p>
+      <h4>Body: {post.body}</h4>
 
       {/* <ul>
         {posts.map((post) => (
