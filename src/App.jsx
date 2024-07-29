@@ -1,20 +1,15 @@
 import { createContext, useState } from 'react';
 import './App.css';
-import CompA from './components/CompA';
+import RefComponent from './components/RefComponent';
 
 export const NameContext = createContext();
 export const channelContext = createContext();
-
 function App() {
-  const [count, setCount] = useState();
+  const [count, setCount] = useState(0);
 
   return (
     <>
-      <NameContext.Provider value={'Sanish'}>
-        <channelContext.Provider value={count}>
-          <CompA />
-        </channelContext.Provider>
-      </NameContext.Provider>
+      <RefComponent />
     </>
   );
 }
