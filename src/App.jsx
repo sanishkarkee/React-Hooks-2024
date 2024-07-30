@@ -1,15 +1,10 @@
-import { createContext, useState } from 'react';
 import './App.css';
-import RefComponent from './components/RefComponent';
+import UseRef from './UseRef';
 
-export const NameContext = createContext();
-export const channelContext = createContext();
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
     <>
-      <RefComponent />
+      <UseRef />
     </>
   );
 }
